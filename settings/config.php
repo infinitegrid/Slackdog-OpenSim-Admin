@@ -6,9 +6,85 @@
  * See LICENSE for the full licensing terms of this file.
  *
 */
+/*
+ *
+ * Config from support module addin
+ *
+ */
+$mysql_host = "";		//mysql host (localhost if mysql is running on this machine)
+$mysql_user = "";			//mysql user name
+$mysql_pwd = "";				//mysql password
+$mysql_db = "";		//mysql database name
 
+/********************	directory to put files associated with the tickets	********************************/
+// it is recommended that you choose the directory below your www directory, say: $filesdir = "../../files";
+// below is the default, not recommended since the files are visible by http unless you .htaccess the directory
+$filesdir = "./files";
+/********************	choose your date and datetime format	********************************************/
+//$dateformat = "m/d/y"; // example: 10/02/04 (U.S.A.)
+$dateformat = "Y-m-d";
+//$dateformat = "y/m/d"; // Europe....
+//$datetimeformat = "m/d/y \a\\t g:ia"; // example: 01/27/04 at 1:55pm
+$datetimeformat = "Y-m-d H:i:s";
+
+
+/********************************* Which language will I use? *********************************************/
+/**********************************************************************************************************/
+// en = english
+// es = spanish
+// pt = portuguese - portugal
+// nl = dutch
+// de = german
+// fr = french
+// br = portuguese - brazil
+$language="en";
+ 
+ 
+/***************	You shouldn't need to change anything below here.	***********************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+
+// prepended sup_ to table names to easily distinguish them in the wiredux db
+$mysql_sessions_table = "sup_sessions";				// store sessions - necessary for load balanced systems like sourceforge
+$mysql_announcement_table = "sup_announcements";	// mysql announcement table name
+$mysql_tcategories_table = "sup_tcategories";		// mysql ticket categories table
+$mysql_tpriorities_table = "sup_tpriorities";		// mysql ticket priority table
+$mysql_tstatus_table = "sup_tstatus";				// mysql ticket status table
+$mysql_platforms_table = "sup_platforms";			// mysql platforms table
+$mysql_settings_table = "sup_settings";				// mysql settings table
+$mysql_themes_table = "sup_themes";					// mysql themes table
+$mysql_whosonline_table = "sup_whosonline";			// mysql whosonline table
+$mysql_people_table = "sup_people";					// replaces $mysql_users_table
+$mysql_companies_table = "sup_companies";           // people belong to companies
+$mysql_groups_table = "sup_groups";					// groups hold supporters
+$mysql_supporters_table = "sup_supporters";			// maps supporters to groups
+$mysql_modules_table = "sup_modules";				// modules
+$mysql_versions_table = "sup_versions";				// versions
+$mysql_tickets_table = "sup_tickets";				// tickets
+$mysql_tracktime_table = "sup_tracktime";			// keep track of time
+$mysql_ticketmodules_table = "sup_ticketmodules";	// maps modules referenced in a ticket
+$mysql_diskid_table = "sup_diskid";					// diskid is id of a cd-rom
+$mysql_faqcategories_table = "sup_faqcategories";	// faqs categories
+$mysql_faqs_table = "sup_faqs";						// faqs
+$mysql_ticketdiskid_table = "sup_ticketdiskid";		// holds diskid for a ticket. this is a temporary solution
+$mysql_ticketfiles_table = "sup_ticketfiles";		// maps files associated with ticket
+$mysql_files_table = "sup_files";					// files
+
+$sourceforge = "off";							// on/off to display sourceforge thanks
+$session_save_db = "off";						// on/off to save session in mysql or tmp directory. sourceforge requires on
+
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+
+ /*
+  *
+  *              END OF SUPPORT CONFIG MERGE
+  *
+  *
+  */
+ 
 ##################### System #########################
-define("SYSNAME","Slackdog Grid");
+define("SYSNAME","Your Grid Name Here");
 define("SYSURL","http://localhost");
 define("SYSMAIL","your@email.com");
 
@@ -53,13 +129,13 @@ $display_marker="dr";
 ##################### Database ########################
 define("C_DB_TYPE","mysql");
 //Your Hostname here:
-define("C_DB_HOST","localhost");
+define("C_DB_HOST","");
 //Your Databasename here:
-define("C_DB_NAME","wiredux");
+define("C_DB_NAME","");
 //Your Username from Database here:
-define("C_DB_USER","root");
+define("C_DB_USER","");
 //Your Database Password here:
-define("C_DB_PASS","********");
+define("C_DB_PASS","");
 
 ################ Database Tables #########################
 define("C_ADMIN_TBL","admin");
@@ -98,3 +174,4 @@ define("G_MEMBERSHIP_ROLES_TBL", "osgroups.osgrouprolemembership");
 define("G_NAMES_TBL", "osgroups.osgroup");
 define("G_ROLES_TBL", "osgroups.osrole");
 ?>
+
