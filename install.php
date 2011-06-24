@@ -5,7 +5,7 @@
 **	author:	Riseon Kosten
 **	date:	2011/06/24
 ********************************************************************************
-*******************************************************************************/
+*******************************************************************************/ 
 
 require_once "settings/config.php";
 require_once "settings/lang/$language/language.php";
@@ -25,7 +25,7 @@ $companycomments = $_POST['companycomments'];
 $address = $_POST['address'];
 
 
-echo '<html><head><title>MyHelpdesk '.$lang['installation'].'</title>';
+echo '<html><head><title>Slackdog Web Interface '.$lang['installation'].'</title>';
 require_once "settings/style.php";
 echo '</head><body>';
 
@@ -44,7 +44,7 @@ if(!isset($step)) {
 				<table cellSpacing=1 cellPadding=5 width=100% border=0>
 					<tr>
 						<td class=info align=center>
-							<b>MyHelpdesk '.$lang['installation'].'</b>
+							<b>Slackdog Web Interface '.$lang['installation'].'</b>
 						</td>
 					</tr>
 					<tr>
@@ -811,7 +811,7 @@ INSERT INTO `lastnames` (`name`, `active`) VALUES
 ('Tickle', '1'),
 ('Young', '1');
 INSERT INTO `pagemanager` (`id`, `code`, `sitename`, `content`, `rank`, `type`, `active`, `url`, `target`, `display`) VALUES
-(1, '1211831857', 'Home', '<p> </p>\r\n<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">\r\n    <tbody>\r\n        <tr>\r\n            <td width="63%" valign="top" height="204">\r\n            <table cellspacing="0" cellpadding="5" border="0" bgcolor="#ffffff" align="center" width="90%" height="195">\r\n                <tbody>\r\n                    <tr>\r\n                        <td valign="top">\r\n                        <p><strong>Welcome to Slackdog Grid !</strong><br />\r\n                        <br />\r\n                        <p>This site is currently under construction. Automated account creation is disabled on the website. Please Contact Trinity at trinity93@gmail.com for information on getting an account</p>\r\n                        <p>For now you can see the Status of our System -> <br />\r\n                        <br />\r\n                        Feel free to look around the site. :-)</p>\r\n <br />\r\n<p><strong>Now looking for donations !</strong><br />\r\nWe are currently looking for donations to help support and update the grid. Please contact Trinity at trinity93@gmail.com if you would like to make a donation.</p>\r\n                        </td>\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n            </td>\r\n            <td valign="top" colspan="2"> </td>\r\n        </tr>\r\n        <tr>\r\n            <td> </td>\r\n            <td width="33%"> </td>\r\n            <td width="3%"> </td>\r\n        </tr>\r\n    </tbody>\r\n</table>', '01', '1', '1', 'index.php?page=home', '_self', '0'),
+(1, '1211831857', 'Home', '', '01', '1', '1', 'index.php?page=home', '_self', '0'),
 (28, '1262042911', 'Events', '', '05', '1', '1', 'index.php?page=events', '_self', '1'),
 (3, '1211831925', 'Gridstatus', '', '03', '1', '1', 'index.php?page=gridstatus', '_self', '0'),
 (5, '1213729504', 'Region List', '', '26', '1', '1', 'index.php?page=regions', '_self', '0'),
@@ -853,7 +853,7 @@ INSERT INTO `sitemanagement` (`pagecase`, `type`, `include`) VALUES
 ('transactions', 'account', 'transactions.php');
 
 
-	")
+	");
 	
 				
 	$defaultcontact = $lang['defaultcontact'];
@@ -868,7 +868,7 @@ INSERT INTO `sitemanagement` (`pagecase`, `type`, `include`) VALUES
 	//insert inactive contacts company
 	mysql_query("insert into $mysql_companies_table values(NULL, 'Inactive Contacts', '$inactivecontactsaddress', '1', '1', '$time', '$inactivecontacts', '0')") or die(mysql_error());
 	//insert welcome message in thelass=back>
-							<br>
+	echo'						<br>
 							<table class=border cellSpacing=0 cellPadding=0 width=100% align=center border=0>
 								<tr>
 									<td>

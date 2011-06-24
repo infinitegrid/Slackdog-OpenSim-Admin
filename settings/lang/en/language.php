@@ -396,13 +396,13 @@ $lang[last_ticket] = "Last Ticket";
 /** [Installation] *******************************************************/
 $lang['installation'] = "Installation";
 $lang['step_one'] = "Step One: Create Tables";
-$lang['step_one_text'] = "You are now ready to begin the installation of the helpdesk software.<br>Click <b>Next</b> to create all of the database tables.";
+$lang['step_one_text'] = "You are now ready to begin the installation of the Slackdog web interface.<br>Click <b>Next</b> to create all of the database tables.";
 $lang['step_two'] = "Step Two: Administrator Account Setup";
 $lang['company_comments'] = "Company Comments";
 $lang['required_field'] = "Required Field";
 $lang['press_back_button'] = "Please press the back button on your browser to correct the problem.";
 $lang['step_three'] = "Step Three: Finishing Up";
-$lang['step_three_text'] = "You have installed the helpdesk software and created the Administrator account.<br>You should now LOGIN and create a ticketing schema."; // DO NOT TRANSLATE LOGIN
+$lang['step_three_text'] = "You have installed the Slackdog web interface software and created an Administrator account.<br>You should now LOGIN and create a ticketing schema."; // DO NOT TRANSLATE LOGIN
 $lang['install_error'] = "Your XXX information is either missing or incorrect."; // DO NOT TRANSLATE XXX
 
 //insert some data into the platforms table.
@@ -433,6 +433,6 @@ $lang['defaultcontact'] = "This contact cannot be modified!";
 $lang['inactivecontacts'] = "This company cannot be modified!";
 $lang['inactivecontactsaddress'] = "This virtual company serves as a pool for contacts that are not assigned to any company.";
 //insert welcome message in the announcements table
-$lang['welcome'] = "Welcome! Thank you for installing MyHelpdesk! Visit <a href=http://www.sourceforge.net/projects/myhelpdesk/>MyHelpdesk</a> at SourceForge if you have any question.";
+$lang['welcome'] = "Welcome! Thank you for installing the Slackdog web interface! Visit <a href=http://www.slackdog.com/>Slackdog</a> if you have any question.";
 
 ?>
