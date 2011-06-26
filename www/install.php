@@ -76,14 +76,14 @@ if(!isset($step)) {
     <td class=back colspan=2 align=center>'.$lang['install_admin_text'].'</td>
   <tr>
     <td class=info width=150>First Name</td>
-    <td class=back width=150><input name="first" type="text" value="firstname" size="20" maxlength="50" /></td>
+    <td class=back width=150><input name="first" type="text" value="Grid" size="20" maxlength="50" /></td>
   </tr>
   <tr>
     <td class=info >Last Name</td>
-    <td class=back ><input name="last" type="text" value="lastname" size="20" maxlength="50" /></td>
+    <td class=back ><input name="last" type="text" value="Administrator" size="20" maxlength="50" /></td>
   </tr>
   <td class=info >Username</td>
-    <td class=back ><input name="username" type="text" value="username" size="20" maxlength="50" /></td>
+    <td class=back ><input name="username" type="text" value="gridadmin" size="20" maxlength="50" /></td>
   </tr>
   <tr>
     <td class=info >Email Address</td>
@@ -144,12 +144,6 @@ if($step == 1) {
 	$welcome = $lang['welcome'];
 
 	$time = time();
-	$pwd = md5("password");
-	//insert default contact for inactive contacts company
-//	mysql_query("insert into sup_people values(NULL, 'Default', 'Contact', '$defaultcontact', '$pwd', 'default.contact@inactivecontacts.com', 'XXX-XXX-XXXX', 'XXX-XXX-XXXX', '1', '1', '$time', '$defaultcontact', '1', '0', '0', 'default')") or die(mysql_error());
-	//insert inactive contacts company
-//	mysql_query("insert into sup_companies values(NULL, 'Inactive Contacts', '$inactivecontactsaddress', '1', '1', '$time', '$inactivecontacts', '0')") or die(mysql_error());
-	//insert welcome message in thelass=back>
 	echo'						<br>
 							<table class=border cellSpacing=0 cellPadding=0 width=100% align=center border=0>
 								<tr>
@@ -214,6 +208,14 @@ if($step == 1) {
 	$pwd = md5($pwd1);
 	$time = time();
 
+	//Load default post install values into slackdog tables
+	$query = "INSERT INTO ".C_INFOWINDOW_TBL." (`gridstatus`, `active`, `color`, `title`, `message`) VALUES ('1', '1', 'green', 'Congradulations!', 'You\'ve successfully installed the Slackdog web interface!');";
+	mysql_query($query) or die(mysql_error());
+
+	//Load first administrator account as entered during install
+	$query = "INSERT INTO ".C_ADMIN_TBL." values( '1', '$username', '".md5(md5($pwd1) . ":" )."');";
+	mysql_query($query) or die(mysql_error());
+	//begin support system default value loads
 	//insert admin in people table
 	$query = "insert into $mysql_people_table values(NULL, '$first', '$last', '$username', '$pwd', '$email', '$phone', '$fax', '2', '2', '$time', '$admincomments', '0', '1', '1', 'default')";
 	mysql_query($query) or die(mysql_error());

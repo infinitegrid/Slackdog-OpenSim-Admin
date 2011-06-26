@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2007, 2008 Contributors, http://opensimulator.org/
+ * Copyright (c) 2007, 2008 Contributors, http://devopensim.lator.org/
  * See CONTRIBUTORS for a full list of copyright holders.
  *
  * See LICENSE for the full licensing terms of this file.
@@ -93,12 +93,12 @@ $session_save_db = "off";						// on/off to save session in mysql or tmp directo
  
 ##################### System #########################
 define("SYSNAME","Your Grid Name Here");
-define("SYSURL","http://localhost");
+define("SYSURL","http://www.infinitegrid.org/webdev/");
 define("SYSMAIL","your@email.com");
 
 
-$userInventoryURI="http://localhost:8003/";
-$userAssetURI="http://localhost:8003/";
+$userInventoryURI="http://localhost:8503/";
+$userAssetURI="http://localhost:8503/";
 
 ############ Delete Unconfirmed accounts ################
 // e.g. 24 for 24 hours  leave empty for no timed delete
@@ -167,15 +167,15 @@ define("C_OFFLINE_IM_TBL", "offline_msgs");
 define("C_STATS_REGIONS_TBL", "statistics");
 
 //OPENSIM DEFAULT TABLES (NEEDED FOR LOGINSCREEN & MONEY SYSTEM)
-define("C_ASSETS_TBL","opensim.assets");
-define("C_USERS_TBL","opensim.UserAccounts");
-define("C_AUTH_TBL","opensim.auth");
-define("C_AGENTS_TBL","opensim.GridUser");
-define("C_REGIONS_TBL","opensim.regions");
-define("C_APPEARANCE_TBL", "opensim.Avatars");
+define("C_ASSETS_TBL","devopensim.assets");
+define("C_USERS_TBL","devopensim.UserAccounts");
+define("C_AUTH_TBL","devopensim.auth");
+define("C_AGENTS_TBL","devopensim.GridUser");
+define("C_REGIONS_TBL","devopensim.regions");
+define("C_APPEARANCE_TBL", "devopensim.Avatars");
 
 //GROUPS DEFAULT TABLES (NEEDED FOR THE GROUP PARTS)
-//  The module can be configured to use it's own db, or opensim's.  
+//  The module can be configured to use it's own db, or devopensim.s.  
 //  But the table names need to be those below.
 define("G_MEMBERSHIP_TBL", "osgroups.osgroupmembership");
 define("G_MEMBERSHIP_ROLES_TBL", "osgroups.osgrouprolemembership");
@@ -206,8 +206,8 @@ if (!defined('ENV_HELPER_PATH')) define('ENV_HELPER_PATH', '/path/to/helper/dire
 // Valiables for OpenSim
 
 define('OPENSIM_DB_HOST',			'localhost');
-define('OPENSIM_DB_NAME',			'opensim');
-define('OPENSIM_DB_USER',			'opensim');
+define('OPENSIM_DB_NAME',			'devopensim');
+define('OPENSIM_DB_USER',			'devopensim');
 define('OPENSIM_DB_PASS',			'****');
 
 define('CURRENCY_SCRIPT_KEY',		'');
@@ -218,7 +218,7 @@ define('USER_SERVER_URI',			'');	// not use localhost or 127.0.0.1
 define('USE_CURRENCY_SERVER',		1);
 define('USE_UTC_TIME',				1);
 
-define('SYSURL',					ENV_HELPER_URL);
+//define('SYSURL',					ENV_HELPER_URL);
 $GLOBALS['xmlrpc_internalencoding'] = 'UTF-8';
 
 if (USE_UTC_TIME) date_default_timezone_set('UTC');
