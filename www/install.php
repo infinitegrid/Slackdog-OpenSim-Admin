@@ -73,7 +73,7 @@ if(!isset($step)) {
 										</table>
 <table class=border width=300 border="0" cellspacing="1" cellpadding="5" align=center>
   <tr>
-    <td class=back colspan=2 align=center>$lang['install_admin_text']</td>
+    <td class=back colspan=2 align=center>'.$lang['install_admin_text'].'</td>
   <tr>
     <td class=info width=150>First Name</td>
     <td class=back width=150><input name="first" type="text" value="firstname" size="20" maxlength="50" /></td>
@@ -284,3 +284,4 @@ function validEmail($address) {
 		return false;
 }
 ?>
+
