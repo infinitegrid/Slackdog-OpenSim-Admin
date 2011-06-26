@@ -404,7 +404,7 @@ $lang['press_back_button'] = "Please press the back button on your browser to co
 $lang['step_three'] = "Step Three: Finishing Up";
 $lang['step_three_text'] = "You have installed the Slackdog web interface software and created an Administrator account.<br>You should now LOGIN and create a ticketing schema."; // DO NOT TRANSLATE LOGIN
 $lang['install_error'] = "Your XXX information is either missing or incorrect."; // DO NOT TRANSLATE XXX
-
+$lang['install_admin_text'] = "Please enter your desired Web Interface Administrator details";
 //insert some data into the platforms table.
 $lang['generic'] = "Generic";
 $lang['pc'] = "PC";
