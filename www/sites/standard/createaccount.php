@@ -486,10 +486,9 @@ else if($_GET[aktion]=="ok")
 	
 			$DbLink->query("INSERT INTO ".C_CODES_TBL." (code,UUID,info,email,time)VALUES('$code','$UUID','confirm','$_SESSION[EMAIL]',".time().")");
 
-  $DbLink->query("INSERT INTO ".C_USERS_TBL." (PrincipalID,FirstName,LastName,created,)
+$DbLink->query("INSERT INTO ".C_USERS_TBL." (PrincipalID,FirstName,LastName,created)
 	VALUES
-('$UUID','".$_SESSION['ACCFIRST']."','".$_SESSION['ACCLAST'].','.time().")  ");
-
+('$UUID','".$_SESSION['ACCFIRST']."','".$_SESSION['ACCLAST'].','.time());
 	  $DbLink->query("INSERT INTO ".C_AGENTS_TBL." 	(UserID,HomeRegionID,HomePosition,HomeLookAt,LastRegionID,LastPosition,LastLookAt,Online,Login,Logout)
 	VALUES
 ('$UUID','".$_SESSION['REGIONID']."','<128,128,128>,'<100,100,100>',".$_SESSION['REGIONID']."','<128,128,128>','<100,100,100>','0',".time());

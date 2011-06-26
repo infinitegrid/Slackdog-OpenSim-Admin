@@ -13,7 +13,7 @@ $WERROR="Thank you, your account is now active and ready to use.";
 $DbLink->query("SELECT passwordSalt FROM ".C_WIUSR_TBL." WHERE UUID='$UUID'");
 list($passwordHash) = $DbLink->next_record();
 	
-$DbLink->query("UPDATE ".C_USERS_TBL." SET passwordHash='$passwordHash' WHERE UUID='$UUID'");	
+$DbLink->query("UPDATE ".C_AUTH_TBL." SET passwordHash='$passwordHash' WHERE UUID='$UUID'");	
 $DbLink->query("UPDATE ".C_WIUSR_TBL." SET passwordHash='$passwordHash', passwordSalt='',active='1' WHERE UUID='$UUID'");	
 $DbLink->query("DELETE FROM ".C_CODES_TBL." WHERE code='$_GET[code]' and info='confirm'");
 
